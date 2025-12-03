@@ -1,5 +1,5 @@
 
-<h2 align="center"> <a href="https://arxiv.org/abs/2512.03000">DynamicVerse: A Physically-Aware Multimodal Framework <a href="https://arxiv.org/abs/2512.03000"> for 4D World Modeling </a>
+<h2 align="center"> <a href="https://arxiv.org/abs/2512.03000">DynamicVerse: A Physically-Aware Multimodal Framework<br>for 4D World Modeling</a></h2>
 
 <h5 align="center">
 
