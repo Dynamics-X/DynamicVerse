@@ -3,8 +3,8 @@
 
 <h5 align="center">
 
-[![arXiv](https://img.shields.io/badge/Arxiv-251203.03000-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2512.0300) [![Gradio](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/kairunwen/DynamicVerse) 
-[![Home Page](https://img.shields.io/badge/Project-Website-green.svg)](https://dynamic-verse.github.io/) [![X](https://img.shields.io/badge/-Twitter@Kairun%20Wen%20-black?logo=twitter&logoColor=1D9BF0)](https://x.com/KairunWen)  [![youtube](https://img.shields.io/badge/Demo_Video-E33122?logo=Youtube)](https://www.youtube.com/@kairunwen)
+[![arXiv](https://img.shields.io/badge/Arxiv-251203.03000-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2512.00300) [![Gradio](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/kairunwen/DynamicVerse) 
+[![Home Page](https://img.shields.io/badge/Project-Website-green.svg)](https://dynamic-verse.github.io/) [![X](https://img.shields.io/badge/-Twitter@Kairun%20Wen%20-black?logo=twitter&logoColor=1D9BF0)](https://x.com/KairunWen)  [![youtube](https://img.shields.io/badge/Demo_Video-E33122?logo=Youtube)](https://www.youtube.com/watch?v=0h7XysIpG8Y)
 </h5>
 
 
