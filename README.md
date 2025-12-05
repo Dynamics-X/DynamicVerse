@@ -59,7 +59,7 @@ This script will automatically download the following models:
 - CoTracker3 (for motion tracking)
 - UniDepth (for depth estimation)
 - Sa2VA-8B (multimodal understanding model)
-- Qwen3-VL-235B (vision-language model)(optional)
+- Qwen2.5-VL-72B-Instruct (vision-language model)(optional)
 
 ## Quick Start
 
@@ -79,9 +79,9 @@ This script executes the following steps:
 4. **4D Reconstruction** (Optional): Complete 4D scene reconstruction using dynamicBA
 
 
-### Qwen3-VL Configuration
+### Qwen2.5-VL Configuration
 
-Qwen3-VL can be used in two ways:
+Qwen2.5-VL can be used in two ways:
 
 #### Option 1: API Service (Default)
 
@@ -114,7 +114,7 @@ client = OpenAI(
 )
 
 # Specify model name at line 213
-model="Qwen/Qwen3-VL-235B-A22B-Instruct"
+model="Qwen/Qwen2.5-VL-72B-Instruct"
 ```
 
 **Install Dependencies:**
@@ -128,7 +128,7 @@ uv pip install -U vllm  # Requires vllm>=0.11.0
 ```bash
 python -m vllm.entrypoints.openai.api_server \
   --model <ckpt_path> \
-  --served-model-name Qwen/Qwen3-VL-235B-A22B-Instruct \
+  --served-model-name Qwen/Qwen2.5-VL-72B-Instruct \
   --tensor-parallel-size 4 \
   --mm-encoder-tp-mode data \
   --enable-expert-parallel \
@@ -140,7 +140,7 @@ python -m vllm.entrypoints.openai.api_server \
   --distributed-executor-backend mp
 ```
 
-For detailed deployment instructions, refer to [Qwen3-VL](https://github.com/QwenLM/Qwen3-VL?tab=readme-ov-file)
+For detailed deployment instructions, refer to [Qwen2.5-VL](https://github.com/QwenLM/Qwen3-VL?tab=readme-ov-file)
 
 
 ## Processing Pipeline
@@ -244,7 +244,7 @@ data/
 
 1. **GPU Requirements**: At least 8 A100 GPUs recommended for large model inference
 2. **Storage Space**: Pre-trained models require approximately 100GB storage
-3. **Memory Requirements**: Sa2VA-8B requires at least 32GB VRAM, Qwen3-VL requires more resources
+3. **Memory Requirements**: Sa2VA-8B requires at least 32GB VRAM, Qwen2.5-VL requires more resources
 4. **Data Formats**: Supports common video formats and image sequences
 
 ## Related Links
