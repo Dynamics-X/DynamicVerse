@@ -242,15 +242,16 @@ data/
 
 ## Notes
 
-1. **GPU Requirements**: At least 8 A100 GPUs recommended for large model inference
-2. **Storage Space**: Pre-trained models require approximately 100GB storage
-3. **Memory Requirements**: Sa2VA-8B requires at least 32GB VRAM, Qwen2.5-VL requires more resources
-4. **Data Formats**: Supports common video formats and image sequences
+1. **Storage Space**: Pre-trained models require approximately 100GB storage
+2. **Memory Requirements**: Sa2VA-8B requires at least 32GB VRAM, Qwen2.5-VL requires more resources
+3. **Data Formats**: Supports common video formats and image sequences
 
-## Related Links
-
-- [Sa2VA Project](https://lxtgh.github.io/project/sa2va)
-- [Qwen3-VL Repository](https://github.com/QwenLM/Qwen3-VL)
+## Acknowledgements
+Our code is based on the following awesome repositories:
+- [Sa2VA](https://lxtgh.github.io/project/sa2va)
+- [Qwen-VL](https://github.com/QwenLM/Qwen3-VL)
+- [Cotracker](https://github.com/Davidyao99/co-tracker/tree/9e3082b6c921fa9546535d0190f9693fab193c31)
+- [Unidepth](https://github.com/lpiccinelli-eth/UniDepth)
 
 ## License
 
