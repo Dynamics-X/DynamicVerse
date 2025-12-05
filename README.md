@@ -3,8 +3,7 @@
 
 <h5 align="center">
 
-[![arXiv](https://img.shields.io/badge/Arxiv-251203.03000-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2512.03000) [![Gradio](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/kairunwen/DynamicVerse) 
-[![Home Page](https://img.shields.io/badge/Project-Website-green.svg)](https://dynamic-verse.github.io/) [![X](https://img.shields.io/badge/-Twitter@Kairun%20Wen%20-black?logo=twitter&logoColor=1D9BF0)](https://x.com/KairunWen)  [![youtube](https://img.shields.io/badge/Demo_Video-E33122?logo=Youtube)](https://www.youtube.com/watch?v=0h7XysIpG8Y)
+[![Home Page](https://img.shields.io/badge/Project-Website-blue.svg)](https://dynamic-verse.github.io/) [![arXiv](https://img.shields.io/badge/Arxiv-251203.03000-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2512.03000) [![Gradio](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-ffcc00)](https://huggingface.co/datasets/kairunwen/DynamicVerse) [![youtube](https://img.shields.io/badge/Demo_Video-E33122?logo=Youtube)](https://www.youtube.com/watch?v=0h7XysIpG8Y) [![X](https://img.shields.io/badge/-Twitter@Kairun%20Wen%20-black?logo=twitter&logoColor=1D9BF0)](https://x.com/KairunWen) 
 </h5>
 
 <br>
@@ -24,17 +23,18 @@ DynamicVerse is an integrated framework for dynamic scene understanding and 4D r
 
 ```
 DynamicVerse/
-├── dynamicBA/           # 4D scene reconstruction module
-│   ├── unimatch/        # Optical flow and depth estimation
-│   ├── dataset_prepare/ # Data preprocessing tools
-│   └── config/          # Configuration files
-├── Sa2VA/               # Vision-language understanding module
-│   ├── vlm/             # Vision-language models
-│   └── third_parts/     # Third-party integrations
-├── data/                # Dataset directory
-├── scripts/             # Preprocessing scripts
-└── dynamicgen/          # Pipeline execution
-    └── qwen_analysis/   # Qwen analysis
+├── dynamicBA/              # 4D scene reconstruction module
+│   ├── unimatch/           # Optical flow and depth estimation
+│   ├── dataset_prepare/    # Data preprocessing tools
+│   └── config/             # Configuration files
+├── data/                   # Dataset directory
+├── scripts/                # Preprocessing scripts
+├── dynamicgen/             # Pipeline execution
+│   └── scripts/            # DynamicGen pipeline
+├── Sa2VA/                  # Vision-language multimodal model
+├── CoTracker/              # Point tracking model
+├── UniDepth/               # Monocular depth estimation
+└── ...
 ```
 
 ## Installation
@@ -113,7 +113,7 @@ client = OpenAI(
     api_key="none"  # Not needed for local service
 )
 
-# Specify model name at line 213
+# Specify model name
 model="Qwen/Qwen2.5-VL-72B-Instruct"
 ```
 
@@ -140,7 +140,7 @@ python -m vllm.entrypoints.openai.api_server \
   --distributed-executor-backend mp
 ```
 
-For detailed deployment instructions, refer to [Qwen2.5-VL](https://github.com/QwenLM/Qwen3-VL?tab=readme-ov-file)
+For detailed deployment instructions, refer to [Qwen-VL](https://github.com/QwenLM/Qwen3-VL?tab=readme-ov-file)
 
 
 ## Processing Pipeline
@@ -215,7 +215,7 @@ data/
         │   ├── instance_labels.json    # Instance label information
         │   └── result_summary.json     # Segmentation result summary
         ├── dynamicBA/ (Optional)        # 4D reconstruction results
-        │   ├── fused_4d.npz    # Fused 4D data
+        │   ├── pose.npz        # Intrinsic and Extrinsics
         │   ├── depth/          # Depth maps
         │   └── flow/           # Optical flow data
         └── processing_log_<scene_id>.log  # Processing log
@@ -226,7 +226,6 @@ data/
 - **dynamic_objects_*.json**: Contains detected dynamic object information, including position, category, and tracking ID
 - **instance_labels.json**: Label mapping for each instance, used for multi-object segmentation
 - **result_summary.json**: Segmentation result statistics, including frame count, object count, etc.
-- **fused_4d.npz**: Contains point cloud, trajectory, and temporal information for 4D scene data
 - **processing_log_*.log**: Detailed processing log for debugging
 
 ## Configuration
