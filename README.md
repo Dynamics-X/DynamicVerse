@@ -8,6 +8,8 @@
 
 <br>
 
+https://github.com/user-attachments/assets/14030eb4-fb1f-42b4-833b-b9ce98aeaa26
+
 ## Overview
 
 DynamicVerse is an integrated framework for dynamic scene understanding and 4D reconstruction, combining advanced visual models such as Sa2VA, Qwen-VL, DAM, CameraBench, CoTracker, and UniDepth to achieve end-to-end processing from video to 4D scenes.
