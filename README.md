@@ -125,7 +125,7 @@ uv pip install -U vllm  # Requires vllm>=0.11.0
 ```
 
 **Start Local Service:**
-```bash
+```python
 python -m vllm.entrypoints.openai.api_server \
   --model <ckpt_path> \
   --served-model-name Qwen/Qwen2.5-VL-72B-Instruct \
@@ -228,16 +228,22 @@ data/
 - **result_summary.json**: Segmentation result statistics, including frame count, object count, etc.
 - **processing_log_*.log**: Detailed processing log for debugging
 
-## Configuration
+## Evaluation
+We provide preprocessed datasets to reproduce  Table 1 and 2 in our main paper.
 
-### Environment Variables
-- `DASHSCOPE_API_KEY`: For calling Qwen API service
-- `CUDA_VISIBLE_DEVICES`: Specify GPU devices to use
+### Preprocessing
+You can also download our preprocessed data that we used for the quantitive results in our paper:
+```bash
+cd data
+gdown https://drive.google.com/uc?id=1V1WIRvnJCJStL63rluwNZMPI2Gq4-yQy -O preprocessed.zip
+unzip preprocessed.zip
+```
 
-### Main Parameters
-- `--flow_model`: Optical flow model selection (unimatch/raft/gmflow)
-- `--grid_size`: CoTracker grid size (default 50)
-- `--interval`: Tracking interval frames (default 10)
+### Metrics Evaluation
+We provide evaluation scripts for pose and depth metrics:
+```bash
+bash ./scripts/eval.sh
+```
 
 ## Notes
 
@@ -251,6 +257,7 @@ Our code is based on the following awesome repositories:
 - [Qwen-VL](https://github.com/QwenLM/Qwen3-VL)
 - [Cotracker](https://github.com/Davidyao99/co-tracker/tree/9e3082b6c921fa9546535d0190f9693fab193c31)
 - [Unidepth](https://github.com/lpiccinelli-eth/UniDepth)
+- [Uni4D](https://github.com/Davidyao99/uni4d)
 
 ## License
 
