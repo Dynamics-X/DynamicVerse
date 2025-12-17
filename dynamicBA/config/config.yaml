@@ -1,0 +1,55 @@
+workdir: "~"
+ba_lr: 1e-2
+cp_translation_dyn_lr: 1e-2
+intrinsics_lr: 1e-4
+num_init_epochs: 600
+num_BA_epochs: 2000
+num_dyn_epochs: 1000
+reproj_weight: 1.0
+pose_smooth_weight_t: 1.0
+pose_smooth_weight_r: 1.0
+dyn_smooth_weight_t: 10.0
+dyn_laplacian_weight_t: 100.0
+experiment_name: base
+log: True
+opt_intrinsics: True
+depth_dir: "unidepth"
+cotracker_path: "cotrackerv3_10_75"
+deva_dir: "qwen"
+video: None
+loss_fn: "l1"
+deterministic: True
+seed: 42
+dyn_mask_dir: "qwen"
+mask_name: "Annotations"
+save_intermediate: False
+load_from_intermediate: False
+debug_mode: False
+
+# === 光流模型配置 ===
+flow_model: "unimatch"
+
+# === 简化版光流优化核心参数 ===
+flow_weight: 1.0          # 适中的光流权重，避免过度优化
+num_flow_epochs: 50        # 光流优化轮数
+flow_lr: 1e-2              # 光流优化学习率
+flow_sample_ratio: 0.5   # 像素采样比例，提高效率
+
+# === 光流优化目标控制 ===
+flow_opt_depth: True       # 只优化深度图
+flow_opt_pose: False       # 不优化相机姿态（避免全局影响）
+flow_opt_intrinsics: False # 不优化内参
+
+# === 循环一致性权重参数 ===
+cycle_consistency_sigma: 1.0    # 高斯权重标准差
+min_cycle_weight: 0.01          # 最小权重
+max_cycle_error: 5.0            # 最大循环误差阈值
+flow_quality_threshold: 2.0     # 光流质量阈值
+
+# === 数值稳定性配置 ===
+use_huber_loss: False      # 使用Huber损失增强鲁棒性
+huber_delta: 1.0           # Huber损失参数
+max_grad_norm: 1.0         # 梯度裁剪阈值
+
+# === 输出配置 ===
+suffix: "_simple_flow_opt_1.0_1e-4"
