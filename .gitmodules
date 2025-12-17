@@ -1,0 +1,9 @@
+[submodule "co-tracker"]
+	path = co-tracker
+	url = https://github.com/Davidyao99/co-tracker.git
+[submodule "UniDepth"]
+	path = UniDepth
+	url = https://github.com/lpiccinelli-eth/UniDepth.git
+[submodule "Sa2VA"]
+	path = Sa2VA
+	url = https://github.com/bytedance/Sa2VA.git
