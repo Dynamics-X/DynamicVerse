@@ -282,6 +282,8 @@ Our code is based on the following awesome repositories:
 - [Cotracker](https://github.com/Davidyao99/co-tracker/tree/9e3082b6c921fa9546535d0190f9693fab193c31)
 - [Unidepth](https://github.com/lpiccinelli-eth/UniDepth)
 - [Uni4D](https://github.com/Davidyao99/uni4d)
+- [DAM](https://github.com/NVlabs/describe-anything)
+- [CameraBench](https://github.com/sy77777en/CameraBench)
 
 ## License
 
